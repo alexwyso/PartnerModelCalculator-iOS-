@@ -56,18 +56,18 @@ class TableSingleOutput: UIViewController, UITableViewDelegate, UITableViewDataS
         buyTable.delegate = self
         buyTable.dataSource = self
         
-//        partnerTable.layer.cornerRadius = 15
-//        buyTable.layer.cornerRadius = 15
-//        rentTable.layer.cornerRadius = 15
+        partnerTable.layer.cornerRadius = 15
+        buyTable.layer.cornerRadius = 15
+        rentTable.layer.cornerRadius = 15
         
         self.partnerTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.buyTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell1")
         self.rentTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell2")
         
-        titles = ["Final Asset Value:", "Total Costs:", "Monthly Payment:", "Net Loss/Gain:"]
+        titles = ["Net Loss/Gain", "Total Costs:", "Monthly Payment:", "Final Asset Value:"]
         
         partnerNums = ["$X.XX", "$X.XX", "$X.XX", "$X.XX"]
-        rentNums = ["$0.00", "$X.XX", "$X.XX", "$X.XX"]
+        rentNums = ["$X.XX", "$X.XX", "$X.XX", "$0.00"]
         buyNums = ["$X.XX", "$X.XX", "$X.XX", "$X.XX"]
         
         negative = [true, true, true]
@@ -99,18 +99,18 @@ class TableSingleOutput: UIViewController, UITableViewDelegate, UITableViewDataS
         
         let gains = Double(upfront)! * pow(1 + annualReturnRate, 30)
         let formattedGains = numberFormatter.string(from: NSNumber(value: gains))
-        partnerNums[0] = "$" + formattedGains!
+        partnerNums[3] = "$" + formattedGains!
         
         netProf = gains - cost
         
         if (netProf < 0) {
             let formattedNet = numberFormatter.string(from: NSNumber(value: -1 * netProf))
-            partnerNums[3] = "-($" + formattedNet! + ")"
+            partnerNums[0] = "-($" + formattedNet! + ")"
             
         } else {
             negative[0] = false
             let formattedNet = numberFormatter.string(from: NSNumber(value: netProf))
-            partnerNums[3] = "$" + formattedNet!
+            partnerNums[0] = "$" + formattedNet!
         }
         
         let formattedRent = numberFormatter.string(from: NSNumber(value: Double(price)! * 0.01))
@@ -118,7 +118,7 @@ class TableSingleOutput: UIViewController, UITableViewDelegate, UITableViewDataS
         
         let formattedTotalRent = numberFormatter.string(from: NSNumber(value: 30 * 12 * Double(price)! * 0.01))
         rentNums[1] = "$" + formattedTotalRent!
-        rentNums[3] = "-($" + formattedTotalRent! + ")"
+        rentNums[0] = "-($" + formattedTotalRent! + ")"
         
         let i : Double = (0.045 / 12)
         let n : Double = (30 * 12)
@@ -149,18 +149,18 @@ class TableSingleOutput: UIViewController, UITableViewDelegate, UITableViewDataS
         let salePrice = Double(price)! * pow(1.03, 30)
         let minusFees = 0.94 * salePrice
         let formattedSalesPrice = numberFormatter.string(from: NSNumber(value: minusFees))
-        buyNums[0] = "$" + formattedSalesPrice!
+        buyNums[3] = "$" + formattedSalesPrice!
         
         let netMortgageSum = minusFees - total
         
         if (netMortgageSum < 0) {
             
             let formattedNetMortgage = numberFormatter.string(from: NSNumber(value: -1 * netMortgageSum))
-            buyNums[3] = "-($" + formattedNetMortgage! + ")"
+            buyNums[0] = "-($" + formattedNetMortgage! + ")"
             
         } else {
             negative[2] = false
-            buyNums[3] = "$" + numberFormatter.string(from: NSNumber(value: netMortgageSum))!
+            buyNums[0] = "$" + numberFormatter.string(from: NSNumber(value: netMortgageSum))!
         }
     }
     
@@ -176,11 +176,11 @@ class TableSingleOutput: UIViewController, UITableViewDelegate, UITableViewDataS
             cell?.titleLabel.text = titles[indexPath.row]
             cell?.numberLabel.text = partnerNums[indexPath.row]
             
-            if negative[0] && indexPath.row == 3{
+            if negative[0] && indexPath.row == 0{
                 cell?.numberLabel.textColor = UIColor.red
             }
             
-            if !negative[0] && indexPath.row == 3{
+            if !negative[0] && indexPath.row == 0{
                 cell?.numberLabel.textColor = UIColor.green
             }
             
@@ -192,11 +192,11 @@ class TableSingleOutput: UIViewController, UITableViewDelegate, UITableViewDataS
             cell?.buyTitleLabel.text = titles[indexPath.row]
             cell?.buyNumberLabel.text = buyNums[indexPath.row]
             
-            if negative[2] && indexPath.row == 3{
+            if negative[2] && indexPath.row == 0{
                 cell?.buyNumberLabel.textColor = UIColor.red
             }
             
-            if !negative[2] && indexPath.row == 3{
+            if !negative[2] && indexPath.row == 0{
                 cell?.buyNumberLabel.textColor = UIColor.green
             }
             
@@ -207,11 +207,11 @@ class TableSingleOutput: UIViewController, UITableViewDelegate, UITableViewDataS
             cell?.rentTitleLabel.text = titles[indexPath.row]
             cell?.rentNumberLabel.text = rentNums[indexPath.row]
             
-            if negative[1] && indexPath.row == 3{
+            if negative[1] && indexPath.row == 0{
                 cell?.rentNumberLabel.textColor = UIColor.red
             }
             
-            if !negative[1] && indexPath.row == 3{
+            if !negative[1] && indexPath.row == 0{
                 cell?.rentNumberLabel.textColor = UIColor.green
             }
             

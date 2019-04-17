@@ -41,18 +41,68 @@ extension String {
 
 class BasicTransInputs: UIViewController {
 
-    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var segSwitch: UISegmentedControl!
+    
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var singleView: UIView!
+    @IBOutlet weak var multipleView: UIView!
     
     @IBOutlet weak var upfrontPaymentTextField: UITextField!
+    
+    @IBOutlet weak var priceTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         priceTextField.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
         upfrontPaymentTextField.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
-        // Do any additional setup after loading the view, typically from a nib.
+        singleView.alpha = 0.0
+        multipleView.alpha = 1.0
+        
+        let button = UIButton(type: .infoDark)
+        button.addTarget(self, action: #selector(self.showInfoScreen), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func viewChanged(_ sender: UISegmentedControl) {
+        
+        
+        switch segSwitch.selectedSegmentIndex {
+        case 1:
+            singleView.fadeIn()
+            multipleView.fadeOut()
+        case 0:
+            singleView.fadeOut()
+            multipleView.fadeIn()
+        default:
+            break;
+        }
+    }
+    
+    func addRightNavigationBarInfoButton() {
+        
+    }
+    
+    @objc func showInfoScreen() {
+        switch segSwitch.selectedSegmentIndex {
+        case 0:
+            let alert = UIAlertController(title: "Single Home Transaction", message: "Enter the price of your future home and reasonable upfront investment. \n The results will allow you to compare the costs and benefits for renting, buying, or partnering on that property and remaining there until cash-out in the 30th year.", preferredStyle: .alert)
+        
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+        
+            self.present(alert, animated: true)
+        case 1:
+            let alert = UIAlertController(title: "Mutiple Home Transactions", message: "Enter the price of your future homes and reasonable upfront investment. \n The results will allow you to compare the costs and benefits for renting, buying, or partnering a new home every 7.5 years with a final cash-out in the 30th year.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        default:
+            break;
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      
         if (priceTextField.text == "" || upfrontPaymentTextField.text == "") {
             
@@ -63,8 +113,8 @@ class BasicTransInputs: UIViewController {
         }
         
         let nextVC = segue.destination as! TableSingleOutput
-        nextVC.price = priceTextField.text!
-        nextVC.upfront = upfrontPaymentTextField.text!
+        nextVC.price = upfrontPaymentTextField.text!
+        nextVC.upfront = priceTextField.text!
         
      }
     
@@ -75,4 +125,18 @@ class BasicTransInputs: UIViewController {
         }
     }
     
+}
+extension UIView {
+    func fadeIn() {
+        // Move our fade out code from earlier
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.alpha = 1.0 // Instead of a specific instance of, say, birdTypeLabel, we simply set [thisInstance] (ie, self)'s alpha
+        }, completion: nil)
+    }
+    
+    func fadeOut() {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            self.alpha = 0.0
+        }, completion: nil)
+    }
 }

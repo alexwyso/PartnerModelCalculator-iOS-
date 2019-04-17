@@ -20,7 +20,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHy-rD-PyA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.0" green="0.68177513329999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partner Model Calculator" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkn-GG-fu5">
+                                        <rect key="frame" x="19.5" y="233.5" width="336" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="336" id="wG2-sb-vd6"/>
+                                            <constraint firstAttribute="height" constant="200" id="zkp-UW-e7D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="46"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.82352941176470584" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Vkn-GG-fu5" firstAttribute="centerX" secondItem="kHy-rD-PyA" secondAttribute="centerX" id="9hy-6q-SYn"/>
+                                    <constraint firstItem="Vkn-GG-fu5" firstAttribute="centerY" secondItem="kHy-rD-PyA" secondAttribute="centerY" id="A9i-1l-Poz"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

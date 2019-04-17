@@ -19,9 +19,6 @@
 		CF2F9FE1224AF8E8000F8C27 /* BasicTransInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F9FE0224AF8E8000F8C27 /* BasicTransInputs.swift */; };
 		CF2F9FE2224AF8E8000F8C27 /* BasicTransInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F9FE0224AF8E8000F8C27 /* BasicTransInputs.swift */; };
 		CF2F9FE3224AF8E8000F8C27 /* BasicTransInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F9FE0224AF8E8000F8C27 /* BasicTransInputs.swift */; };
-		CF2F9FE5224AFA5C000F8C27 /* BasicTransOutputDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F9FE4224AFA5C000F8C27 /* BasicTransOutputDisplay.swift */; };
-		CF2F9FE6224AFA5C000F8C27 /* BasicTransOutputDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F9FE4224AFA5C000F8C27 /* BasicTransOutputDisplay.swift */; };
-		CF2F9FE7224AFA5C000F8C27 /* BasicTransOutputDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F9FE4224AFA5C000F8C27 /* BasicTransOutputDisplay.swift */; };
 		CF4515BB225FEDD400C3EA1B /* MultiTransInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4515BA225FEDD400C3EA1B /* MultiTransInputs.swift */; };
 		CF4515BC225FEDD400C3EA1B /* MultiTransInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4515BA225FEDD400C3EA1B /* MultiTransInputs.swift */; };
 		CF4515BD225FEDD400C3EA1B /* MultiTransInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4515BA225FEDD400C3EA1B /* MultiTransInputs.swift */; };
@@ -65,7 +62,6 @@
 		CF2F9FD0224AF402000F8C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF2F9FDC224AF898000F8C27 /* OptionSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelection.swift; sourceTree = "<group>"; };
 		CF2F9FE0224AF8E8000F8C27 /* BasicTransInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTransInputs.swift; sourceTree = "<group>"; };
-		CF2F9FE4224AFA5C000F8C27 /* BasicTransOutputDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTransOutputDisplay.swift; sourceTree = "<group>"; };
 		CF4515BA225FEDD400C3EA1B /* MultiTransInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTransInputs.swift; sourceTree = "<group>"; };
 		CF4515BE225FF04E00C3EA1B /* MultiTransOutputDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTransOutputDisplay.swift; sourceTree = "<group>"; };
 		CF4515C222669E5E00C3EA1B /* TableSingleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSingleOutput.swift; sourceTree = "<group>"; };
@@ -124,7 +120,6 @@
 				CF4515C222669E5E00C3EA1B /* TableSingleOutput.swift */,
 				CF4515BA225FEDD400C3EA1B /* MultiTransInputs.swift */,
 				CF4515BE225FF04E00C3EA1B /* MultiTransOutputDisplay.swift */,
-				CF2F9FE4224AFA5C000F8C27 /* BasicTransOutputDisplay.swift */,
 				CF2F9FE0224AF8E8000F8C27 /* BasicTransInputs.swift */,
 				CF2F9FDC224AF898000F8C27 /* OptionSelection.swift */,
 				CF2F9FB5224AF401000F8C27 /* Assets.xcassets */,
@@ -286,7 +281,6 @@
 				CF4515BB225FEDD400C3EA1B /* MultiTransInputs.swift in Sources */,
 				CF2F9FE1224AF8E8000F8C27 /* BasicTransInputs.swift in Sources */,
 				CF4515BF225FF04E00C3EA1B /* MultiTransOutputDisplay.swift in Sources */,
-				CF2F9FE5224AFA5C000F8C27 /* BasicTransOutputDisplay.swift in Sources */,
 				CF2F9FDD224AF898000F8C27 /* OptionSelection.swift in Sources */,
 				CF2F9FAF224AF3FE000F8C27 /* AppDelegate.swift in Sources */,
 				CF4515C322669E5E00C3EA1B /* TableSingleOutput.swift in Sources */,
@@ -300,7 +294,6 @@
 				CF4515BC225FEDD400C3EA1B /* MultiTransInputs.swift in Sources */,
 				CF2F9FE2224AF8E8000F8C27 /* BasicTransInputs.swift in Sources */,
 				CF4515C0225FF04E00C3EA1B /* MultiTransOutputDisplay.swift in Sources */,
-				CF2F9FE6224AFA5C000F8C27 /* BasicTransOutputDisplay.swift in Sources */,
 				CF2F9FC4224AF402000F8C27 /* PartnerModelTests.swift in Sources */,
 				CF2F9FDE224AF898000F8C27 /* OptionSelection.swift in Sources */,
 				CF4515C422669E5E00C3EA1B /* TableSingleOutput.swift in Sources */,
@@ -314,7 +307,6 @@
 				CF4515BD225FEDD400C3EA1B /* MultiTransInputs.swift in Sources */,
 				CF2F9FE3224AF8E8000F8C27 /* BasicTransInputs.swift in Sources */,
 				CF4515C1225FF04E00C3EA1B /* MultiTransOutputDisplay.swift in Sources */,
-				CF2F9FE7224AFA5C000F8C27 /* BasicTransOutputDisplay.swift in Sources */,
 				CF2F9FCF224AF402000F8C27 /* PartnerModelUITests.swift in Sources */,
 				CF2F9FDF224AF898000F8C27 /* OptionSelection.swift in Sources */,
 				CF4515C522669E5E00C3EA1B /* TableSingleOutput.swift in Sources */,

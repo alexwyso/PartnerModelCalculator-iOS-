@@ -16,6 +16,7 @@
 		CF451601226B8B7E00C3EA1B /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF451600226B8B7E00C3EA1B /* DataEntryViewController.swift */; };
 		CF451603226B8BC100C3EA1B /* SingleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF451602226B8BC100C3EA1B /* SingleCalculator.swift */; };
 		CF451605226BA35400C3EA1B /* MultipleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF451604226BA35400C3EA1B /* MultipleCalculator.swift */; };
+		CFF09A87226CD84700F25605 /* OutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF09A86226CD84700F25605 /* OutputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CF451600226B8B7E00C3EA1B /* DataEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
 		CF451602226B8BC100C3EA1B /* SingleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCalculator.swift; sourceTree = "<group>"; };
 		CF451604226BA35400C3EA1B /* MultipleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCalculator.swift; sourceTree = "<group>"; };
+		CFF09A86226CD84700F25605 /* OutputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +105,10 @@
 			children = (
 				CF4515D2226B87B500C3EA1B /* AppDelegate.swift */,
 				CF4515D6226B87B500C3EA1B /* Main.storyboard */,
+				CF451602226B8BC100C3EA1B /* SingleCalculator.swift */,
 				CF451604226BA35400C3EA1B /* MultipleCalculator.swift */,
 				CF451600226B8B7E00C3EA1B /* DataEntryViewController.swift */,
-				CF451602226B8BC100C3EA1B /* SingleCalculator.swift */,
+				CFF09A86226CD84700F25605 /* OutputViewController.swift */,
 				CF4515D9226B87BA00C3EA1B /* Assets.xcassets */,
 				CF4515DB226B87BA00C3EA1B /* LaunchScreen.storyboard */,
 				CF4515DE226B87BA00C3EA1B /* Info.plist */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF09A87226CD84700F25605 /* OutputViewController.swift in Sources */,
 				CF4515D3226B87B500C3EA1B /* AppDelegate.swift in Sources */,
 				CF451605226BA35400C3EA1B /* MultipleCalculator.swift in Sources */,
 				CF451603226B8BC100C3EA1B /* SingleCalculator.swift in Sources */,

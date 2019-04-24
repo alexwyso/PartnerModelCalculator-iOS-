@@ -33,7 +33,7 @@ struct SingleCalculator {
         numberFormatter.minimumFractionDigits = 2
         numberFormatter.maximumFractionDigits = 2
         let formattedMonthly = numberFormatter.string(from: NSNumber(value: monthly))
-        partnerNums[1] = "$" + formattedMonthly!
+        partnerNums[3] = "$" + formattedMonthly!
         
         var cost = 0.2 * price!
         for _ in 0...29 {
@@ -42,32 +42,33 @@ struct SingleCalculator {
         }
         
         let formattedCost = numberFormatter.string(from: NSNumber(value: cost))
-        partnerNums[2] = "$" + formattedCost!
+        partnerNums[1] = "$" + formattedCost!
         
         let gains = 0.2 * price! * pow(1 + annualReturnRate, 30)
         let formattedGains = numberFormatter.string(from: NSNumber(value: gains))
-        partnerNums[3] = "$" + formattedGains!
+        partnerNums[0] = "$" + formattedGains!
         
         let netProf = gains - cost
         
         if (netProf < 0) {
             let formattedNet = numberFormatter.string(from: NSNumber(value: -1 * netProf))
-            partnerNums[0] = "-($" + formattedNet! + ")"
+            partnerNums[2] = "-($" + formattedNet! + ")"
             negative[0] = true
             
         } else {
             negative[0] = false
             let formattedNet = numberFormatter.string(from: NSNumber(value: netProf))
-            partnerNums[0] = "$" + formattedNet!
+            partnerNums[2] = "$" + formattedNet!
         }
         
         let formattedRent = numberFormatter.string(from: NSNumber(value: price! * 0.01))
-        rentNums[1] = "$" + formattedRent!
+        rentNums[3] = "$" + formattedRent!
         
         let formattedTotalRent = numberFormatter.string(from: NSNumber(value: 30 * 12 * price! * 0.01))
-        rentNums[2] = "$" + formattedTotalRent!
-        rentNums[0] = "-($" + formattedTotalRent! + ")"
+        rentNums[1] = "$" + formattedTotalRent!
+        rentNums[2] = "-($" + formattedTotalRent! + ")"
         negative[1] = true
+        rentNums[0] = "$0.00"
         
         let i : Double = (0.045 / 12)
         let n : Double = (30 * 12)
@@ -80,7 +81,7 @@ struct SingleCalculator {
         let plusExtra = monMort + totalOtherCosts
         
         let formattedMonthlyMortgage = numberFormatter.string(from: NSNumber(value: plusExtra))
-        buyNums[1] = "$" + formattedMonthlyMortgage!
+        buyNums[3] = "$" + formattedMonthlyMortgage!
         
         var total : Double = 12 * monMort * 30
         
@@ -93,23 +94,23 @@ struct SingleCalculator {
         total += 0.2 * price!
         
         let formattedTotal = numberFormatter.string(from: NSNumber(value: total))
-        buyNums[2] = "$" + formattedTotal!
+        buyNums[1] = "$" + formattedTotal!
         
         let salePrice = price! * pow(1.03, 30)
         let minusFees = 0.94 * salePrice
         let formattedSalesPrice = numberFormatter.string(from: NSNumber(value: minusFees))
-        buyNums[3] = "$" + formattedSalesPrice!
+        buyNums[0] = "$" + formattedSalesPrice!
         
         let netMortgageSum = minusFees - total
         
         if (netMortgageSum < 0) {
             negative[2] = true
             let formattedNetMortgage = numberFormatter.string(from: NSNumber(value: -1 * netMortgageSum))
-            buyNums[0] = "-($" + formattedNetMortgage! + ")"
+            buyNums[2] = "-($" + formattedNetMortgage! + ")"
             
         } else {
             negative[2] = false
-            buyNums[0] = "$" + numberFormatter.string(from: NSNumber(value: netMortgageSum))!
+            buyNums[2] = "$" + numberFormatter.string(from: NSNumber(value: netMortgageSum))!
         }
     }
 }

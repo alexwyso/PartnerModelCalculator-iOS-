@@ -19,9 +19,9 @@ class OutputViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var rentNums = ["e", "f", "g", "h"]
     var buyNums = ["i", "j", "k", "l"]
     
-    var nums = [String]()//["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+    var nums = [String]()
     
-    var titles = ["Net Loss/Gain", "Partner Plan", "Rent", "Purchase", "Monthly Payment", "Partner Plan", "Rent", "Purchase", "Total Costs", "Partner Plan", "Rent", "Purchase", "Final Asset Value", "Partner Plan", "Rent", "Purchase"]
+    var titles = ["Final Asset Value", "Partner Plan", "Rent", "Purchase", "Total Costs", "Partner Plan", "Rent", "Purchase", "Net Loss/Gain", "Partner Plan", "Rent", "Purchase", "Monthly Payment", "Partner Plan", "Rent", "Purchase"]
     
     var negative = [Bool]()
 

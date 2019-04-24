@@ -16,6 +16,9 @@
 		CF451601226B8B7E00C3EA1B /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF451600226B8B7E00C3EA1B /* DataEntryViewController.swift */; };
 		CF451603226B8BC100C3EA1B /* SingleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF451602226B8BC100C3EA1B /* SingleCalculator.swift */; };
 		CF451605226BA35400C3EA1B /* MultipleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF451604226BA35400C3EA1B /* MultipleCalculator.swift */; };
+		CFB6AB62226FE34900F81679 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB6AB61226FE34800F81679 /* AlertViewController.swift */; };
+		CFB6AB6422701EC300F81679 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB6AB6322701EC300F81679 /* Slide.swift */; };
+		CFB6AB6622701F0C00F81679 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFB6AB6522701F0C00F81679 /* Slide.xib */; };
 		CFF09A87226CD84700F25605 /* OutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF09A86226CD84700F25605 /* OutputViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		CF451600226B8B7E00C3EA1B /* DataEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
 		CF451602226B8BC100C3EA1B /* SingleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCalculator.swift; sourceTree = "<group>"; };
 		CF451604226BA35400C3EA1B /* MultipleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCalculator.swift; sourceTree = "<group>"; };
+		CFB6AB61226FE34800F81679 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		CFB6AB6322701EC300F81679 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		CFB6AB6522701F0C00F81679 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		CFF09A86226CD84700F25605 /* OutputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,8 +111,11 @@
 			children = (
 				CF4515D2226B87B500C3EA1B /* AppDelegate.swift */,
 				CF4515D6226B87B500C3EA1B /* Main.storyboard */,
+				CFB6AB6322701EC300F81679 /* Slide.swift */,
+				CFB6AB61226FE34800F81679 /* AlertViewController.swift */,
 				CF451602226B8BC100C3EA1B /* SingleCalculator.swift */,
 				CF451604226BA35400C3EA1B /* MultipleCalculator.swift */,
+				CFB6AB6522701F0C00F81679 /* Slide.xib */,
 				CF451600226B8B7E00C3EA1B /* DataEntryViewController.swift */,
 				CFF09A86226CD84700F25605 /* OutputViewController.swift */,
 				CF4515D9226B87BA00C3EA1B /* Assets.xcassets */,
@@ -241,6 +250,7 @@
 				CF4515DD226B87BA00C3EA1B /* LaunchScreen.storyboard in Resources */,
 				CF4515DA226B87BA00C3EA1B /* Assets.xcassets in Resources */,
 				CF4515D8226B87B500C3EA1B /* Main.storyboard in Resources */,
+				CFB6AB6622701F0C00F81679 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFF09A87226CD84700F25605 /* OutputViewController.swift in Sources */,
+				CFB6AB62226FE34900F81679 /* AlertViewController.swift in Sources */,
 				CF4515D3226B87B500C3EA1B /* AppDelegate.swift in Sources */,
 				CF451605226BA35400C3EA1B /* MultipleCalculator.swift in Sources */,
+				CFB6AB6422701EC300F81679 /* Slide.swift in Sources */,
 				CF451603226B8BC100C3EA1B /* SingleCalculator.swift in Sources */,
 				CF451601226B8B7E00C3EA1B /* DataEntryViewController.swift in Sources */,
 			);

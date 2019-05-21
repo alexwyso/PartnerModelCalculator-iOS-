@@ -21,8 +21,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiZ-Qh-CwT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tamil-nadu-house-elevations" translatesAutoresizingMaskIntoConstraints="NO" id="oyt-vP-3in">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partner Model Calculator" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gg-xa-d0C">
-                                        <rect key="frame" x="19.5" y="233.5" width="336" height="200"/>
+                                        <rect key="frame" x="19" y="391" width="336" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="4hs-cz-FXB"/>
                                             <constraint firstAttribute="width" constant="336" id="Giy-QM-Vea"/>
@@ -34,7 +37,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.46274509803921571" green="0.83921568627450982" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="3Gg-xa-d0C" firstAttribute="centerY" secondItem="LiZ-Qh-CwT" secondAttribute="centerY" id="ALz-fM-qfF"/>
+                                    <constraint firstItem="3Gg-xa-d0C" firstAttribute="centerY" secondItem="LiZ-Qh-CwT" secondAttribute="centerY" constant="157.5" id="ALz-fM-qfF"/>
+                                    <constraint firstAttribute="bottom" secondItem="oyt-vP-3in" secondAttribute="bottom" id="PJq-w1-z2k"/>
+                                    <constraint firstItem="oyt-vP-3in" firstAttribute="leading" secondItem="LiZ-Qh-CwT" secondAttribute="leading" id="TQC-cZ-Yqp"/>
+                                    <constraint firstItem="oyt-vP-3in" firstAttribute="top" secondItem="LiZ-Qh-CwT" secondAttribute="top" id="jve-hS-chd"/>
+                                    <constraint firstAttribute="trailing" secondItem="oyt-vP-3in" secondAttribute="trailing" id="xsV-JR-BzY"/>
                                     <constraint firstItem="3Gg-xa-d0C" firstAttribute="centerX" secondItem="LiZ-Qh-CwT" secondAttribute="centerX" id="zR7-49-cDY"/>
                                 </constraints>
                             </view>
@@ -54,4 +61,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tamil-nadu-house-elevations" width="1262" height="648"/>
+    </resources>
 </document>

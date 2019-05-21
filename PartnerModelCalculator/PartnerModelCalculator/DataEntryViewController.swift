@@ -116,11 +116,11 @@ class DataEntryViewController: UIViewController, UITabBarDelegate {
         
 //        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
 //        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.alpha = 0.9
+//        blurEffectView.alpha = 0.0
 //        blurEffectView.frame = singlePriceView.bounds
 //        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 //        singlePriceView.addSubview(blurEffectView)
-        
+//
 //        let alert = UIAlertController(title: "Welcome!", message: "With the help of this calculator, you will be able to compare the estimated costs and returns for the choice of renting, purchasing, or partnering to satisfy your housing needs for the next 30 years.", preferredStyle: .alert)
 //        alert.addAction(UIAlertAction(title: "Next", style: .default, handler: {
 //            _ in

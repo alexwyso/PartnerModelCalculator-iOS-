@@ -112,34 +112,8 @@ class DataEntryViewController: UIViewController, UITabBarDelegate {
         let myAlert = storyboard.instantiateViewController(withIdentifier: "alert")
         myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+
         self.present(myAlert, animated: true, completion: nil)
-        
-//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.alpha = 0.0
-//        blurEffectView.frame = singlePriceView.bounds
-//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        singlePriceView.addSubview(blurEffectView)
-//
-//        let alert = UIAlertController(title: "Welcome!", message: "With the help of this calculator, you will be able to compare the estimated costs and returns for the choice of renting, purchasing, or partnering to satisfy your housing needs for the next 30 years.", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Next", style: .default, handler: {
-//            _ in
-//            let alert2 = UIAlertController(title: "What is Partnering?", message: "Partnering is an ownership program that allows you to buy a home through a direct investment in partnership shares.\n\nThis program offers many advantages over traditional financing options and does not require a mortgage.\n\nOwn the house - don't let the house own you!", preferredStyle: .alert)
-//            alert2.addAction(UIAlertAction(title: "Next", style: .cancel, handler: {
-//                _ in
-//                let alert3 = UIAlertController(title: "Next Steps", message: "Simply enter the fair market value or address for the house or houses you plan to occupy, noting that the average person will move 4 times over a 30 year period.\n\nOur calculator will do the rest!", preferredStyle: .alert)
-//                alert3.addAction(UIAlertAction(title: "Try it out!", style: .cancel, handler: {
-//                    _ in
-//                    UIView.animate(withDuration: 1, animations: {
-//                        blurEffectView.alpha = 0
-//                        return
-//                    })
-//                }))
-//                self.present(alert3, animated: true, completion: nil)
-//            }))
-//            self.present(alert2, animated: true, completion: nil)
-//        }))
-//        self.present(alert, animated: true, completion: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)

@@ -52,7 +52,7 @@ extension String {
     }
 }
 
-class DataEntryViewController: UIViewController, UITabBarDelegate {
+class DataEntryViewController: UIViewController, UITabBarDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     // Bars UI Elements
     @IBOutlet weak var segmentedView: UISegmentedControl!
@@ -84,6 +84,9 @@ class DataEntryViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var maMapView: MKMapView!
     @IBOutlet weak var maFirstPriceTextField: UITextField!
     @IBOutlet weak var maAddressButton: UIButton!
+    
+    private var locationManager: CLLocationManager!
+    private var currentLocation: CLLocation?
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
@@ -119,6 +122,33 @@ class DataEntryViewController: UIViewController, UITabBarDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     
         self.hideKeyboardWhenTappedAround()
+        
+        saMapView.delegate = self
+        maMapView.delegate = self
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        defer { currentLocation = locations.last }
+        
+        if currentLocation == nil {
+            // Zoom to user location
+            if let userLocation = locations.last {
+                let viewRegion = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
+                saMapView.setRegion(viewRegion, animated: true)
+                saMapView.showsUserLocation = true
+                maMapView.setRegion(viewRegion, animated: true)
+                maMapView.showsUserLocation = true
+            }
+        }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -228,6 +258,12 @@ class DataEntryViewController: UIViewController, UITabBarDelegate {
                 break;
         }
     }
+    
+    func displayAlert() {
+        let alert = UIAlertController(title: "Invalid Entry", message: "Please complete all required fields.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch tabBar.selectedItem {
@@ -235,13 +271,16 @@ class DataEntryViewController: UIViewController, UITabBarDelegate {
             if (segmentedView.selectedSegmentIndex == 0) {
                 let s1 = spPriceTextField!.text!.replacingOccurrences(of: ",", with: "")
                 let first = Double(s1.replacingOccurrences(of: "$", with: ""))
-                let data = SingleCalculator(priceInput: first!)
-                
-                let nextVC = segue.destination as! OutputViewController
-                nextVC.partnerNums = data.partnerNums
-                nextVC.rentNums = data.rentNums
-                nextVC.buyNums = data.buyNums
-                nextVC.negative = data.negative
+                if first != nil {
+                    let data = SingleCalculator(priceInput: first!)
+                    let nextVC = segue.destination as! OutputViewController
+                    nextVC.partnerNums = data.partnerNums
+                    nextVC.rentNums = data.rentNums
+                    nextVC.buyNums = data.buyNums
+                    nextVC.negative = data.negative
+                } else {
+                    displayAlert()
+                }
             } else {
                 //singleAddressView.isHidden = false
             }
@@ -259,13 +298,19 @@ class DataEntryViewController: UIViewController, UITabBarDelegate {
                 let third = Double(s3.replacingOccurrences(of: "$", with: ""))
                 let fourth = Double(s4.replacingOccurrences(of: "$", with: ""))
                 
-                let data = MultipleCalculator(priceInput: first!, price2Input: second!, price3Input: third!, price4Input: fourth!)
+                if (first != nil && second != nil && third != nil && fourth != nil) {
                 
-                let nextVC = segue.destination as! OutputViewController
-                nextVC.partnerNums = data.partnerNums
-                nextVC.rentNums = data.rentNums
-                nextVC.buyNums = data.buyNums
-                nextVC.negative = data.negative
+                    let data = MultipleCalculator(priceInput: first!, price2Input: second!, price3Input: third!, price4Input: fourth!)
+                    
+                    let nextVC = segue.destination as! OutputViewController
+                    nextVC.partnerNums = data.partnerNums
+                    nextVC.rentNums = data.rentNums
+                    nextVC.buyNums = data.buyNums
+                    nextVC.negative = data.negative
+                    
+                } else {
+                    displayAlert()
+                }
                 
             } else {
                 //multiAddressView.isHidden = false

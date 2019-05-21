@@ -50,9 +50,6 @@ class AlertViewController: UIViewController, UIScrollViewDelegate {
         scrollView.sizeToFit()
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
-        //scrollView.backgroundColor = UIColor.init(red: 91.0/255.0, green: 127.0/255.0, blue: 138.0/255.0, alpha: 1)
-        scrollView.layer.cornerRadius = 5
-        scrollView.clipsToBounds = true
         
         self.view.addSubview(scrollView)
         
